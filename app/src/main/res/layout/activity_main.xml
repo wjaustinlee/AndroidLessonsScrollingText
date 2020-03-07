@@ -17,22 +17,44 @@
         android:textColor="@android:color/white"
         android:textStyle="bold" />
 
-    <TextView
+        <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/article_subheading"
-        android:layout_below="@id/article_heading"
-        android:padding="@dimen/padding_regular"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
-        android:text="@string/article_subtitle" />
+        android:layout_below="@id/article_heading">
 
-    <TextView
-        android:id="@+id/article_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/article_subheading"
-        android:lineSpacingExtra="@dimen/line_spacing"
-        android:padding="@dimen/padding_regular"
-        android:text="@string/article_text" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/article_subheading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_regular"
+                android:text="@string/article_subtitle"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault" />
+
+
+            <TextView
+                android:id="@+id/article_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:lineSpacingExtra="@dimen/line_spacing"
+                android:padding="@dimen/padding_regular"
+                android:text="@string/article_text" />
+
+            <Button
+                android:layout_below="@id/article_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_regular"
+                android:layout_margin="@dimen/padding_regular"
+                android:text="Add Comment"
+                android:background="@color/colorAccent"
+                android:textColor="@color/colorPrimaryDark"></Button>
+        </LinearLayout>
+
+    </ScrollView>
 </RelativeLayout>
